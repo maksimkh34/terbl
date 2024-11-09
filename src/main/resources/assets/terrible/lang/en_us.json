@@ -4,5 +4,7 @@
   "effect.terrible.infection": "Infection",
   "effect.terrible.infection.description": "You got infected by eburcaders!",
   "item.terrible.cutter": "Cutter",
-  "item.terrible.glass_shard": "Glass Shard"
+  "item.terrible.glass_shard": "Glass Shard",
+  "item.terrible.eburcadine": "Eburcadine",
+  "block.terrible.eburcadine_ore": "Eburcadine Ore"
 }

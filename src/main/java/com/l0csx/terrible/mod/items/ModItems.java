@@ -20,6 +20,11 @@ public class ModItems {
             "cutter"
     );
 
+    public static final Item Eburcadine = register(
+            new Item(new Item.Settings()),
+            "eburcadine"
+    );
+
     public static Item register(Item item, String id) {
         Identifier itemID = new Identifier(Context.MOD_ID, id);
         Item registeredItem = Registry.register(Registries.ITEM, itemID, item);

@@ -20,6 +20,12 @@ public class ModBlocks {
             true
     );
 
+    public static final Block EburcadineOre = register(
+            new Block((AbstractBlock.Settings.create().sounds(BlockSoundGroup.NETHER_ORE)
+                    .strength(3.0f, 9.0f))),
+            "eburcadine_ore",
+            true);
+
     public static Block register(Block block, String name, boolean shouldRegisterItem) {
         Identifier id = new Identifier(Context.MOD_ID, name);
 
