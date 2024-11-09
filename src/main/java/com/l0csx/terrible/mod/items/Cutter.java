@@ -1,20 +1,22 @@
 package com.l0csx.terrible.mod.items;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
+import java.util.Random;
+
 public class Cutter extends ToolItem {
-
-    public Cutter(ToolMaterial material, Item.Settings settings) {
-        super(material, settings);
-    }
-
     public Cutter() {
-        super(ToolMaterials.IRON, new Item.Settings());
+        super(ToolMaterials.IRON, new Item.Settings().maxDamage(25));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
+                .register((itemGroup) -> itemGroup.add(ModItems.Cutter));
     }
 
     @Override
@@ -22,21 +24,22 @@ public class Cutter extends ToolItem {
         if (hand == Hand.OFF_HAND) {
             ItemStack mainHandStack = user.getStackInHand(Hand.MAIN_HAND);
 
-            // Проверяем, что Cutter в левой руке, а стекло в правой руке
             if (mainHandStack.getItem() == Items.GLASS) {
-                convertGlassToShards(user, mainHandStack);
+                ItemStack shards = new ItemStack(ModItems.GlassShard, 8);
+                var r = new Random().nextInt(10)-7;
+                if(r > 0) {
+                    shards.decrement(r);
+                }
+                mainHandStack.decrement(1);
+                if (!user.getInventory().insertStack(shards)) {
+                    user.dropItem(shards, false);
+                }
+                user.getStackInHand(hand).damage(1, user, (p) -> p.sendToolBreakStatus(hand));
+                world.playSound(null, user.getBlockPos(), SoundEvents.BLOCK_GLASS_BREAK, SoundCategory.PLAYERS, 1.0F, 1.4F);
                 return new TypedActionResult<>(ActionResult.SUCCESS, user.getStackInHand(hand));
             }
         }
 
         return new TypedActionResult<>(ActionResult.PASS, user.getStackInHand(hand));
-    }
-
-    private void convertGlassToShards(PlayerEntity user, ItemStack glassStack) {
-        ItemStack shards = new ItemStack(ModItems.GlassShard, 8);
-        glassStack.decrement(1);
-        if (!user.getInventory().insertStack(shards)) {
-            user.dropItem(shards, false);
-        }
     }
 }

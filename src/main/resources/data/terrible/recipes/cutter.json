@@ -1,20 +1,20 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "###",
-        "#I#",
-        "###"
+        " ii",
+        "i/ ",
+        "/  "
     ],
     "key": {
-        "#": {
-            "item": "minecraft:oak_planks"
+        "i": {
+            "item": "minecraft:iron_ingot"
         },
-        "I": {
-            "item": "minecraft:iron_block"
+        "/": {
+            "item": "minecraft:stick"
         }
     },
     "result": {
-        "item": "terrible:reinforced_oak_planks",
-        "count": 8
+        "item": "terrible:cutter",
+        "count": 1
     }
 }
