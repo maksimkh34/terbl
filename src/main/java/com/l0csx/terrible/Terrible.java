@@ -2,6 +2,7 @@ package com.l0csx.terrible;
 
 import com.l0csx.terrible.mod.ModBlocks;
 import com.l0csx.terrible.mod.ModEffects;
+import com.l0csx.terrible.mod.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 public class Terrible implements ModInitializer {
@@ -12,5 +13,6 @@ public class Terrible implements ModInitializer {
 
 		ModBlocks.initialize();
 		ModEffects.initialize();
+        ModItems.initialize();
 	}
 }

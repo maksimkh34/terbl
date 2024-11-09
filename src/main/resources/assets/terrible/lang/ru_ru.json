@@ -1,0 +1,8 @@
+{
+  "block.terrible.reinforced_oak_planks": "Укрепленные Дубовые Доски",
+  "terrible.oakPlanks.tooltip": "Укрепленные дубовые доски не будут пропускать фантомов.",
+  "effect.terrible.infection": "Заражение",
+  "effect.terrible.infection.description": "Вас заразил Эбуркадер!",
+  "item.terrible.cutter": "Резак",
+  "item.terrible.glass_shard": "Осколок стекла"
+}
