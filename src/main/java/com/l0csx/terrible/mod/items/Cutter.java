@@ -1,6 +1,7 @@
 package com.l0csx.terrible.mod.items;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.sound.SoundCategory;
@@ -41,5 +42,15 @@ public class Cutter extends ToolItem {
         }
 
         return new TypedActionResult<>(ActionResult.PASS, user.getStackInHand(hand));
+    }
+
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return false;
+    }
+
+    @Override
+    public boolean canRepair(ItemStack stack, ItemStack ingredient) {
+        return ingredient.getItem() == Items.IRON_INGOT;
     }
 }

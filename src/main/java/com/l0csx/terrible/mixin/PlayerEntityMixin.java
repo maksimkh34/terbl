@@ -17,7 +17,7 @@ public class PlayerEntityMixin {
 		StatusEffectInstance effect = player.getStatusEffect(ModEffects.InfectionEffect);
 		if (effect != null) {
 			float originalSpeed = info.getReturnValue();
-			info.setReturnValue(originalSpeed * 0.5F); // Уменьшение скорости добычи на 50%
+			info.setReturnValue(originalSpeed * 0.5F);
 		}
 	}
 }

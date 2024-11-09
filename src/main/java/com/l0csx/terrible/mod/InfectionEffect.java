@@ -18,7 +18,7 @@ public class InfectionEffect extends StatusEffect {
             if(player.getHealth() > 1.0F && player.age % 40 == 0) {
                 player.damage(player.getWorld().getDamageSources().magic(), 1f);
             }
-            Vec3d slowness = new Vec3d(1, 1, 1);
+            Vec3d slowness = new Vec3d(0.7, 1, 0.7);
             player.slowMovement(player.getWorld().getBlockState(
                     new BlockPos((int)player.getX(), (int)player.getY(), (int)player.getZ())), slowness);
             player.addExhaustion(0.1F);
