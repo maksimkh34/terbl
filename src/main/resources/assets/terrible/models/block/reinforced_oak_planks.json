@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "terrible:block/reinforced_oak_planks"
+  }
+}

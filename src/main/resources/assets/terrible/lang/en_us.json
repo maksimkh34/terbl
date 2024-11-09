@@ -1,0 +1,6 @@
+{
+  "block.terrible.reinforced_oak_planks": "Reinforced Oak Planks",
+  "terrible.oakPlanks.tooltip": "Reinforced oak planks prevent phantoms from passing through.",
+  "effect.terrible.infection": "Infection",
+  "effect.terrible.infection.description": "Your health gradually decreases and movement slows down."
+}
