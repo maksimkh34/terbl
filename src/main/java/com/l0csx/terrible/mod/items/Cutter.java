@@ -1,5 +1,6 @@
 package com.l0csx.terrible.mod.items;
 
+import com.l0csx.terrible.Context;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,7 +23,7 @@ public class Cutter extends ToolItem {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if (hand == Hand.OFF_HAND) {
+        if (hand == Hand.OFF_HAND && user.isSneaky()) {
             ItemStack mainHandStack = user.getStackInHand(Hand.MAIN_HAND);
 
             if (mainHandStack.getItem() == Items.GLASS) {
