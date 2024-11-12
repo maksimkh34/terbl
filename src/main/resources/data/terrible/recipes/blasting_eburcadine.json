@@ -1,0 +1,9 @@
+﻿{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "terrible:eburcadine_ore"
+  },
+  "result": "terrible:eburcadine",
+  "experience": 1.5,
+  "cookingtime": 250
+}
